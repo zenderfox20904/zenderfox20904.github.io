@@ -1,1 +1,0 @@
-Route to @ops. 1) `git status` and confirm no secrets (grep for service_role, password). 2) `git add -A && git commit -m "deploy: <summary>" && git push origin main`. 3) Wait ~1 min, `curl -sI https://zenderfox20904.github.io` must return 200. 4) Append result to today's daily log.

@@ -1,9 +1,22 @@
-# zenderfox20904.github.io
-Portfolio of Arifuzzaman Raihan. Static, free (GitHub Pages + Supabase free tier).
+# Arifuzzaman Raihan · Portfolio
 
-## Deploy
-1. Create public repo `zenderfox20904.github.io` on the zenderfox20904 account, push this folder to `main`. Pages serves it at https://zenderfox20904.github.io.
-2. Backend (optional, enables blog/orders/admin): create a free Supabase project → SQL editor → run `supabase/schema.sql`. Authentication → Users → add user `raihanarifuzzaman@gmail.com` with a password (disable public sign-ups). Copy Project URL + anon public key into `config.js`. Never put the service_role key anywhere in this repo.
-3. Admin: https://zenderfox20904.github.io/admin.html
+Live: **https://zenderfox20904.github.io**
 
-Without Supabase the site still works (content.json + live GitHub repos; order form falls back to a prefilled email).
+Personal portfolio of Arifuzzaman Raihan, Full Stack Developer & AI Engineer. Experience-first, data-driven and fully responsive, with a built-in blog and client project ordering.
+
+## Features
+- Experience timeline, projects linked to roles, grouped skills, all rendered from `content.json` (editable from the dashboard)
+- Live GitHub repositories (stars, language, last update) via the GitHub REST API
+- Blog with Markdown posts and cover images
+- "Order a project" form; dashboard to confirm/reject orders, auto-generated invoices (print / PDF), project milestones and clients
+- Solid light and dark themes (system default, persisted), scroll and micro-animations that respect `prefers-reduced-motion`
+- Animated SVG logo and inline illustrations, no build step
+
+## Tech stack
+HTML, CSS, vanilla JavaScript · Supabase (Postgres with Row Level Security, Auth, Storage, Realtime) · GitHub Pages · marked + DOMPurify · html2pdf.js
+
+## Setup
+1. Create a Supabase project and run `supabase/schema.sql`.
+2. Add one owner user in Supabase Auth and disable public sign-ups.
+3. Put the project URL and **anon** key in `config.js` (safe in the browser; RLS protects data). Never commit a service_role key.
+4. Push to `main`; GitHub Pages serves the repo root.

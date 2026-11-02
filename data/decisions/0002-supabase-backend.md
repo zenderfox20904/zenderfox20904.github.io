@@ -1,2 +1,0 @@
-# ADR 0002: Supabase free tier for blog, orders, invoices
-Status: accepted (2026-11-02). Context: multi-user writes (public orders) + secure owner admin. Decision: Supabase Auth (email/password, one owner email), Postgres with RLS (`is_admin()` checks JWT email), Storage bucket `covers`. Public anon key is in config.js; RLS prevents writes except order inserts. Invoices are PDFs rendered client-side (html2pdf.js). Consequences: free project pauses after 1 week of inactivity; owner must sign in to the Supabase dashboard to restore it.

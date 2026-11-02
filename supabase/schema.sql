@@ -36,3 +36,6 @@ create policy "public read covers" on storage.objects for select using (bucket_i
 create policy "admin upload covers" on storage.objects for insert with check (bucket_id='covers' and is_admin());
 create policy "admin modify covers" on storage.objects for update using (bucket_id='covers' and is_admin());
 create policy "admin delete covers" on storage.objects for delete using (bucket_id='covers' and is_admin());
+
+-- Realtime: lets the admin dashboard receive new orders live (RLS still applies: only the owner receives rows).
+alter publication supabase_realtime add table orders;

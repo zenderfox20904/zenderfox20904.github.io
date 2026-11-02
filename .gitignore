@@ -3,3 +3,10 @@
 *.key
 node_modules/
 data/private/
+
+# local agent scaffolding (kept out of the public repo)
+AGENTS.md
+CLAUDE.md
+agents/
+.claude/
+data/

@@ -1,32 +1,37 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Arifuzzaman Raihan · Co-Founder & CTO at NoteArch</title>
-<meta name="description" content="Arifuzzaman Raihan, Co-Founder & CTO at NoteArch. Building AI products for education and disaster response.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
-<meta property="og:image" content="photo.jpg"></head><body>
-<header class="nav"><div class="wrap"><a class="brand" href="#top"><img src="logo.svg" alt="AR logo"><span id="brandName">Arifuzzaman Raihan</span></a>
-<button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
-<ul class="links"><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#repos">GitHub</a></li><li><a href="#blog">Blog</a></li><li><a href="#order">Hire me</a></li><li><a href="#contact">Contact</a></li></ul></div></header>
+<title>Arifuzzaman Raihan · Full Stack Developer & AI Engineer</title>
+<meta name="description" content="Arifuzzaman Raihan, Full Stack Developer & AI Engineer building AI products for education and disaster response.">
+<meta name="theme-color" content="#7c3aed"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script src="ui.js"></script></head><body>
+<header class="nav"><div class="wrap"><a class="brand" href="#top" aria-label="Home"><span data-logo style="width:38px;height:38px;display:block"></span><span id="brandName">Arifuzzaman Raihan</span></a>
+<nav><ul class="links"><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#repos">GitHub</a></li><li><a href="#blog">Blog</a></li><li><a href="#order">Hire me</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<div class="tools"><button class="ib" data-theme-btn></button><a class="ib" id="loginBtn" href="admin.html" data-tip="Login" aria-label="Login"></a><button class="ib burger" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div></div></header>
 <main class="wrap" id="top">
-<div class="hero"><div><p class="mut" id="loc"></p><h1>Hi, I'm <span class="gt" id="name"></span></h1><p class="hl" id="headline"></p><p class="tag" id="tagline"></p>
-<div class="btns"><a class="btn p" href="#order">Order a project</a><a class="btn" href="#projects">View projects</a><a class="btn" id="liBtn" target="_blank" rel="noopener">LinkedIn</a></div></div>
-<div class="photo"><img src="photo.jpg" alt="Arifuzzaman Raihan" width="340" height="340"></div></div>
-<section id="about"><h2>About</h2><div class="card" id="aboutTxt"></div></section>
-<section id="skills"><h2>Skills</h2><div class="chips" id="skillList"></div></section>
-<section id="experience"><h2>Experience</h2><div class="tl" id="expList"></div><h2 style="margin-top:40px">Education</h2><div id="eduList"></div></section>
-<section id="projects"><h2>Projects</h2><div class="grid" id="projList"></div></section>
-<section id="repos"><h2>Live from GitHub</h2><p class="mut" id="repoNote">Loading public repositories…</p><div class="grid" id="repoList"></div></section>
-<section id="blog"><h2>Blog</h2><div class="grid" id="blogList"><p class="mut">No posts yet.</p></div><div id="postView" class="article hidden"></div></section>
-<section id="order"><h2>Order a project</h2><div class="card"><form class="f" id="orderForm">
+<div class="hero"><div class="rv"><p class="mut" id="loc"></p><h1>Hi, I'm <span class="gt" id="name">Arifuzzaman Raihan</span></h1><p class="hl" id="headline"></p><p class="mut" id="tagline"></p>
+<div class="btns"><a class="btn p" href="#order">Order a project</a><a class="btn" href="#experience">View experience</a></div><div class="stats" id="stats"></div></div>
+<div class="hero-art rv"><div data-illus="hero"></div><div class="photo"><img src="photo.jpg" alt="Arifuzzaman Raihan" width="340" height="340" fetchpriority="high"></div></div></div>
+<section id="experience"><h2 class="rv">Experience</h2><p class="sub rv">Where I've built, led and shipped.</p><div class="tl" id="expList"><div class="fill"></div></div><h3 class="rv" style="margin:34px 0 12px">Education</h3><div id="eduList"></div></section>
+<section id="projects"><h2 class="rv">Projects</h2><p class="sub rv">Each linked to the role it came from.</p><div class="grid" id="projList"></div></section>
+<section id="about"><div class="svc"><div class="rv illus" data-illus="build"></div><div><h2 class="rv">About</h2><div id="aboutTxt" class="rv"></div><div class="grid" id="svcList" style="margin-top:20px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))"></div></div></div></section>
+<section id="skills"><h2 class="rv">Skills</h2><p class="sub rv">Grouped by area, with where I use them.</p><div class="sg" id="skillList"></div></section>
+<section id="repos"><h2 class="rv">Live from GitHub</h2><p class="sub" id="repoNote">Loading public repositories…</p><div class="grid" id="repoList"><div class="card sk"></div><div class="card sk"></div><div class="card sk"></div></div></section>
+<section id="blog"><h2 class="rv">Blog</h2><p class="sub rv">Notes on building products and AI.</p><div class="grid" id="blogList"><div class="card sk"></div><div class="card sk"></div></div><div id="postView" class="article hidden"></div></section>
+<section id="order"><h2 class="rv">Order a project</h2><p class="sub rv">Tell me what you need. I reply by email.</p><div class="svc"><div class="rv illus" data-illus="order"></div><div class="card rv"><form class="f" id="orderForm">
 <div><label for="o_name">Your name</label><input id="o_name" name="client_name" required maxlength="120"></div>
 <div><label for="o_email">Email</label><input id="o_email" name="client_email" type="email" required maxlength="200"></div>
 <div><label for="o_type">Project type</label><select id="o_type" name="project_type" required><option>Web application</option><option>Mobile app (Flutter)</option><option>AI / LLM integration</option><option>SaaS / EdTech platform</option><option>Backend / API</option><option>Other</option></select></div>
 <div><label for="o_budget">Budget (USD)</label><input id="o_budget" name="budget" maxlength="60" placeholder="e.g. 1500"></div>
 <div class="full"><label for="o_tl">Desired timeline</label><input id="o_tl" name="timeline" maxlength="120" placeholder="e.g. 6 weeks"></div>
 <div class="full"><label for="o_req">Requirements</label><textarea id="o_req" name="requirements" required maxlength="5000"></textarea></div>
-<input name="website" class="hidden" tabindex="-1" autocomplete="off">
-<div class="full"><button class="btn p" type="submit">Send request</button><div id="orderMsg" class="note hidden"></div></div></form></div></section>
-<section id="contact"><h2>Contact</h2><div class="btns" id="contactList"></div></section>
-</main><footer>© <span id="yr"></span> Arifuzzaman Raihan · <a href="admin.html">Admin</a></footer>
+<input name="website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="full"><button class="btn p" type="submit">Send request</button><div id="orderMsg" class="note hidden" role="status"></div></div></form></div></div></section>
+<section id="contact"><h2 class="rv">Contact</h2><p class="sub rv">Open to partnerships, founder collaborations and product conversations.</p><div class="btns rv" id="contactList"></div></section>
+</main>
+<footer><div class="wrap"><div class="fgrid">
+<div><a class="brand" href="#top"><span data-logo style="width:38px;height:38px;display:block"></span>Arifuzzaman Raihan</a><p class="mut" style="margin-top:12px;max-width:320px" id="ftag"></p><div class="soc" id="fsoc"></div></div>
+<div><h4>Explore</h4><ul><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#repos">GitHub repos</a></li><li><a href="#blog">Blog</a></li></ul></div>
+<div><h4>Services</h4><ul id="fsvc"></ul></div>
+<div><h4>Work with me</h4><ul><li><a id="fmail" href="#"></a></li><li class="mut small" id="floc"></li></ul><a class="btn p fcta" href="#order">Order a project</a></div>
+</div><div class="fbar"><span>© <span id="yr"></span> Arifuzzaman Raihan. All rights reserved.</span><span>Built with HTML, CSS, JS · Supabase · GitHub Pages</span></div></div></footer>
 <script src="config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js" defer></script>
