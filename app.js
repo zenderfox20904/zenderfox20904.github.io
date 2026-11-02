@@ -22,10 +22,9 @@ function render(d){$('#name').textContent=d.name;UI.type($('#headline'),[d.headl
  const groups=d.skillGroups||[{name:'Skills',items:d.skills}];
  $('#skillList').innerHTML=groups.map(g=>`<div class="card rv"><h3>${esc(g.name)}</h3><div class="chips" style="margin-top:10px">${g.items.map(s=>{const at=(d.experience||[]).filter(e=>(e.skills||[]).includes(s)).map(e=>e.org);return `<span class="chip" title="${at.length?'Used at '+esc(at.join(', ')):''}">${esc(s)}</span>`}).join('')}</div></div>`).join('');
  const c=d.contact;$('#contactList').innerHTML=[c.email&&`<a class="btn p" href="mailto:${esc(c.email)}">${UI.mail} ${esc(c.email)}</a>`,c.linkedin&&`<a class="btn" href="${esc(c.linkedin)}" target="_blank" rel="noopener">${UI.li} LinkedIn</a>`,c.github&&`<a class="btn" href="${esc(c.github)}" target="_blank" rel="noopener">${UI.gh} GitHub</a>`,...(c.websites||[]).map(w=>`<a class="btn" href="${esc(w)}" target="_blank" rel="noopener">${UI.i("globe")} ${esc(w.replace(/^https?:\/\/(www\.)?/,''))}</a>`)].filter(Boolean).join('');
- $('#ftag').textContent=d.tagline||'';$('#floc').textContent=d.location||'';$('#fmail').href='mailto:'+c.email;$('#fmail').textContent=c.email;
- $('#fsoc').innerHTML=[c.linkedin&&`<a class="ib" href="${esc(c.linkedin)}" target="_blank" rel="noopener" aria-label="LinkedIn">${UI.li}</a>`,c.github&&`<a class="ib" href="${esc(c.github)}" target="_blank" rel="noopener" aria-label="GitHub">${UI.gh}</a>`,c.email&&`<a class="ib" href="mailto:${esc(c.email)}" aria-label="Email">${UI.mail}</a>`].filter(Boolean).join('');
- $('#fsvc').innerHTML=(d.services||[]).map(s=>`<li><a href="#order">${esc(s.title)}</a></li>`).join('');
- UI.reveal();timelineFill()}
+ $('#fmail').href='mailto:'+c.email;$('#fli').href=c.linkedin||'#';$('#fgh').href=c.github||'#';
+ $('#fsoc').innerHTML=[c.linkedin&&`<a href="${esc(c.linkedin)}" target="_blank" rel="noopener" aria-label="LinkedIn">${UI.li}</a>`,c.github&&`<a href="${esc(c.github)}" target="_blank" rel="noopener" aria-label="GitHub">${UI.gh}</a>`,c.email&&`<a href="mailto:${esc(c.email)}" aria-label="Email">${UI.mail}</a>`].filter(Boolean).join('');
+  UI.reveal();timelineFill()}
 function timelineFill(){const tl=$('#expList'),f=tl.querySelector('.fill');const on=()=>{const r=tl.getBoundingClientRect(),v=innerHeight*.7;f.style.height=Math.max(0,Math.min(r.height-12,v-r.top))+'px'};addEventListener('scroll',on,{passive:true});on()}
 async function repos(u){try{const r=await fetch(`https://api.github.com/users/${u}/repos?per_page=100&sort=pushed`);if(!r.ok)throw 0;let a=(await r.json()).filter(x=>!x.fork);
  $('#repoNote').innerHTML=`<span data-n="${a.length}">0</span> public repositories, fetched live from GitHub.`;UI.count($('#repoNote [data-n]'),a.length);
