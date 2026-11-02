@@ -106,3 +106,4 @@ i[data-lucide]{display:inline-block;width:1.15em;height:1.15em}svg.lucide{width:
 .sec-il{max-width:170px}
 .hero-art .photo{left:-4%;top:2%;transform:none;width:40%}
 .stat b span{font-size:inherit!important;color:inherit!important;display:inline!important;margin:0!important}
+@media(max-width:900px){.hero-art .photo{left:2%;top:2%}}
