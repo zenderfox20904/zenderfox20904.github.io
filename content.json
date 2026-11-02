@@ -1,0 +1,34 @@
+{
+  "name": "Arifuzzaman Raihan",
+  "headline": "Co-Founder & CTO at NoteArch",
+  "tagline": "Building AI products for education and disaster response",
+  "location": "Dhaka, Bangladesh",
+  "about": [
+    "I build products that remove friction from education and digital business. As Co-Founder & CTO of NoteArch, I lead product and technology for an AI-powered Intelligent Academic Lifecycle Management System (IALMS), connecting schools, coaching centers, homeschools, teachers, parents, students and staff in one platform.",
+    "As Founder of Aicraftar and CodQube, I also build and ship digital products for education and marketplace use cases. Most recently I built RescueLens solo for the Meta Global AI Developer Hackathon.",
+    "Focus: product strategy for SaaS & EdTech platforms, AI-assisted workflows that save institutions time, clean UX, reliable systems and measurable outcomes. Open to strategic partnerships, founder collaborations and product conversations."
+  ],
+  "skills": ["Python", "React", "Node.js", "SQL", "PostgreSQL", "LLM building", "Laravel", "Flutter", "Generative AI", "Computer Vision", "Data Analysis", "SaaS", "Software Development", "Server Administration"],
+  "experience": [
+    {"role": "Co-Founder & CTO", "org": "NoteArch", "period": "Dec 2024 – Present", "place": "Dhaka, Bangladesh · Hybrid", "points": ["Lead product architecture, engineering direction and platform delivery", "Build the seven-portal ecosystem: School Admin, Teacher/Tutor, Student, Parent, Staff, Contributor, TeknoBoard/TeknoBook", "Ship reliable AI-assisted workflows"]},
+    {"role": "Founder", "org": "CodQube", "period": "Sep 2023 – Present", "place": "Australia", "points": ["Lead product strategy and delivery for client and internal platforms", "Partner with teams on SaaS, marketplace and digital transformation projects"]},
+    {"role": "Founder", "org": "Aicraftar", "period": "May 2022 – Present", "place": "Bangladesh · United States", "points": ["Build and ship AI-powered products and digital platforms for education and business", "Apply AI and data analysis to institutional workflows"]},
+    {"role": "Chief Technology Officer", "org": "Kreeto", "period": "Jan 2022 – Present", "place": "Dhaka, Bangladesh", "points": ["Own technical architecture and Laravel-based platform delivery", "Build reliable systems and mentor engineering execution"]},
+    {"role": "Generative AI Engineer", "org": "Kendroo.io", "period": "Feb 2024 – Oct 2024", "place": "Dhaka, Bangladesh", "points": ["Designed and shipped generative AI workflows for production", "Improved quality, latency and usefulness of AI-assisted experiences"]}
+  ],
+  "education": [{"school": "Daffodil International University (DIU)", "degree": "Computer and Information Sciences (CIS)", "period": "2019 – 2023"}],
+  "projects": [
+    {"title": "RescueLens", "period": "Oct 2026 – Present", "url": "", "tags": ["Meta AI", "Laravel", "React", "Flutter"], "description": "AI disaster reporting and live alert platform built solo for the Meta Global AI Developer Hackathon (Indie Developer Track). Meta Muse Spark analyzes citizen photos and videos to classify incidents and severity, SAM 3.1 highlights the evidence, and verified alerts reach NGOs, help centers and responders on web and mobile."},
+    {"title": "NoteArch", "period": "Oct 2024 – Present", "url": "https://www.notearch.com", "tags": ["AI", "EdTech", "SaaS"], "description": "AI-powered Intelligent Academic Lifecycle Management platform connecting schools, teachers, parents and staff: admissions, academics, attendance, finance, communication, TeknoBoard classroom tools and school websites."},
+    {"title": "TeknoTracker", "period": "May 2026 – Present", "url": "", "tags": ["Maps", "AI", "ML"], "description": "Multi-tasking tracker built on a custom map stack (not Google Maps) for operational visibility and field workflows. Associated with NoteArch."},
+    {"title": "Aicraftar · Tharo G", "period": "May 2022 – Present", "url": "https://aicraftar.com", "tags": ["SLM", "Search", "Bengali AI"], "description": "Built Tharo G, a small language model (SLM), and an advanced search GPT algorithm for AI-powered product experiences, including Bengali AI dictionary work."},
+    {"title": "Kreeto", "period": "Feb 2021 – Feb 2024", "url": "", "tags": ["Generative AI", "Laravel"], "description": "Multimodal generative AI platform: design, Laravel/PHP systems and production AI features."}
+  ],
+  "contact": {
+    "email": "arifuzzamankhanarif1993@gmail.com",
+    "github": "https://github.com/zenderfox20904",
+    "linkedin": "https://www.linkedin.com/in/arifuzzaman-raihan/",
+    "websites": ["https://www.notearch.com", "https://aicraftar.com", "https://codqube.com"]
+  },
+  "githubUser": "zenderfox20904"
+}

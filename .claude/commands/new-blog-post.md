@@ -1,0 +1,1 @@
+Route to @writer. Ask for topic. Draft Markdown in data/drafts/<slug>.md (title, excerpt, body) using only real facts. Owner publishes from /admin.html → Posts (paste body, upload cover, tick Published).

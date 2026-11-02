@@ -1,0 +1,1 @@
+Read the last 3 files in data/daily-logs/ and new rows in Admin → Orders. Summarize: pending orders, milestone due dates this week, unpaid invoices, site status (curl). Write data/daily-logs/<today>.md with What / Why / Reflection.
