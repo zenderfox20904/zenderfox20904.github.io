@@ -9,7 +9,7 @@ async function loadContent(){let d=await fetch('content.json').then(r=>r.json())
   const {data:{session}}=await sb.auth.getSession();if(session){const b=$('#loginBtn');b.innerHTML=UI.dash;b.dataset.tip='Dashboard';b.setAttribute('aria-label','Dashboard')}}
  return d}
 const empty=t=>`<div class="card empty" style="grid-column:1/-1">${UI.illus.empty}<p class="mut">${t}</p></div>`;
-function render(d){$('#name').textContent=d.name;UI.type($('#headline'),[d.headline,...(d.rotating||[])]);$('#tagline').textContent=d.tagline||'';$('#loc').textContent=d.location?'📍 '+d.location:'';
+function render(d){$('#name').textContent=d.name;UI.type($('#headline'),[d.headline,...(d.rotating||[])]);$('#tagline').textContent=d.tagline||'';
  $('#stats').innerHTML=(d.stats||[]).map((s,i)=>`<div class="stat"><span class="sti">${UI.i(STI[i%4])}</span><b><span data-n="${+s.value}">0</span>${esc(s.suffix||'')}</b><span>${esc(s.label)}</span></div>`).join('');
  const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('[data-n]').forEach(n=>UI.count(n,n.dataset.n));so.disconnect()}}));so.observe($('#stats'));
  $('#aboutTxt').innerHTML=(Array.isArray(d.about)?d.about:[d.about]).map(p=>`<p style="margin:8px 0">${esc(p)}</p>`).join('');
