@@ -137,7 +137,8 @@
         "Flutter"
       ],
       "description": "AI disaster reporting and live alert platform built solo for the Meta Global AI Developer Hackathon (Indie Developer Track). Meta Muse Spark analyzes citizen photos and videos to classify incidents and severity, SAM 3.1 highlights the evidence, and verified alerts reach NGOs, help centers and responders on web and mobile.",
-      "org": "Independent (Meta hackathon)"
+      "org": "Independent (Meta hackathon)",
+      "github": "https://github.com/zenderfox20904/RescueLens"
     },
     {
       "title": "NoteArch",
@@ -149,7 +150,8 @@
         "SaaS"
       ],
       "description": "AI-powered Intelligent Academic Lifecycle Management platform connecting schools, teachers, parents and staff: admissions, academics, attendance, finance, communication, TeknoBoard classroom tools and school websites.",
-      "org": "NoteArch"
+      "org": "NoteArch",
+      "github": ""
     },
     {
       "title": "TeknoTracker",
@@ -161,7 +163,8 @@
         "ML"
       ],
       "description": "Multi-tasking tracker built on a custom map stack (not Google Maps) for operational visibility and field workflows. Associated with NoteArch.",
-      "org": "NoteArch"
+      "org": "NoteArch",
+      "github": ""
     },
     {
       "title": "Aicraftar · Tharo G",
@@ -173,7 +176,8 @@
         "Bengali AI"
       ],
       "description": "Built Tharo G, a small language model (SLM), and an advanced search GPT algorithm for AI-powered product experiences, including Bengali AI dictionary work.",
-      "org": "Aicraftar"
+      "org": "Aicraftar",
+      "github": ""
     },
     {
       "title": "Kreeto",
@@ -184,11 +188,12 @@
         "Laravel"
       ],
       "description": "Multimodal generative AI platform: design, Laravel/PHP systems and production AI features.",
-      "org": "Kreeto"
+      "org": "Kreeto",
+      "github": ""
     }
   ],
   "contact": {
-    "email": "arifuzzamankhanarif1993@gmail.com",
+    "email": "raihanarifuzzaman@gmail.com",
     "github": "https://github.com/zenderfox20904",
     "linkedin": "https://www.linkedin.com/in/arifuzzaman-raihan/",
     "websites": [

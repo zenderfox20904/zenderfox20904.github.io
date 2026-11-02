@@ -1,21 +1,34 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
-<title>Dashboard · Arifuzzaman Raihan</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"><script src="ui.js"></script>
-<style>.lay{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:24px 0 60px}
-.side{position:sticky;top:86px;align-self:start;display:flex;flex-direction:column;gap:4px;position:relative}
-.side button{all:unset;cursor:pointer;padding:11px 14px;border-radius:10px;color:var(--mut);position:relative;z-index:1;transition:color .2s}.side button:hover{color:var(--txt)}.side button.on{color:#fff}
-.side .ind{position:absolute;left:0;right:0;height:44px;border-radius:10px;background:var(--grad);transition:transform .35s cubic-bezier(.4,1.4,.6,1),height .3s;z-index:0}
-@media(max-width:860px){.lay{grid-template-columns:1fr}.side{position:sticky;top:66px;z-index:5;background:var(--bg);flex-direction:row;overflow-x:auto;padding:8px 0;border-bottom:1px solid var(--line)}.side .ind{display:none}.side button.on{background:var(--grad)}.side button{white-space:nowrap}}
-#view{animation:vin .35s ease}@keyframes vin{from{opacity:0;transform:translateY(10px)}}
-.kpis{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}.kpi b{font-size:2rem;display:block;line-height:1.1}
-.bar{transform-origin:bottom;transform-box:fill-box;animation:grow .8s ease both}@keyframes grow{from{transform:scaleY(0)}}
+<title>Dashboard · Arifuzzaman Raihan</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script><script src="ui.js"></script>
+<style>
+body.adm{overflow-x:hidden}.adm .nav{display:none}
+.lay{display:grid;grid-template-columns:var(--sw,248px) 1fr;min-height:100vh;transition:grid-template-columns .25s ease}
+.lay.col{--sw:72px}
+.side{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;background:var(--bg2);border-right:1px solid var(--line);padding:16px 12px;gap:4px;z-index:30;overflow:hidden}
+.side .top{display:flex;align-items:center;gap:10px;padding:4px 6px 18px;font-weight:700;white-space:nowrap}
+.side .top [data-logo]{width:36px;height:36px;flex:0 0 36px;display:block}
+.side .nl{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;color:var(--mut);white-space:nowrap;font-size:.95rem;transition:background .2s,color .2s}
+.side .nl svg.lucide{width:20px;height:20px}
+.side .nl:hover{background:var(--at);color:var(--txt)}
+.side .nl.on{background:var(--a);color:#fff}
+.side .grow{flex:1}.side .sep{height:1px;background:var(--line);margin:8px 4px}
+.lay.col .side .lbl{opacity:0;width:0;overflow:hidden}.lay.col .side .nl{justify-content:center;padding:10px}
+.main{min-width:0;display:flex;flex-direction:column}
+.bar{display:flex;align-items:center;gap:10px;padding:14px 28px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:10}
+.bar h1{font-size:1.15rem;margin:0;flex:1}
+#view{padding:28px;animation:vin .35s ease}@keyframes vin{from{opacity:0;transform:translateY(10px)}}
+.mb{display:none}.scrim{display:none}
+@media(max-width:860px){.lay,.lay.col{grid-template-columns:1fr}.side{position:fixed;left:0;top:0;width:260px;transform:translateX(-100%);transition:transform .28s ease}.lay.open .side{transform:none}.lay.open .scrim{display:block;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:20}.mb{display:inline-grid}.cb{display:none}.lay.col .side .lbl{opacity:1;width:auto}.bar{padding:12px 16px}#view{padding:18px}}
+.kpis{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.kpi b{font-size:2rem;display:block;line-height:1.1}.kpi .ki{color:var(--a);margin-bottom:6px;display:block}
+.chartbar{transform-origin:bottom;transform-box:fill-box;animation:grow .8s ease both}@keyframes grow{from{transform:scaleY(0)}}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 #inv{background:#fff;color:#111;padding:32px;border-radius:12px}#inv th,#inv td{border-color:#ddd}
-@media print{body *{visibility:hidden}#inv,#inv *{visibility:visible}#inv{position:absolute;left:0;top:0;width:100%}}</style></head><body>
-<header class="nav"><div class="wrap"><a class="brand" href="index.html"><span data-logo style="width:38px;height:38px;display:block"></span>Dashboard</a><div class="tools"><button class="ib" data-theme-btn></button><button class="btn sm hidden" id="logout">Log out</button></div></div></header>
+@media print{body *{visibility:hidden}#inv,#inv *{visibility:visible}#inv{position:absolute;left:0;top:0;width:100%}}</style></head><body class="adm">
+<header class="nav"><div class="wrap"><a class="brand" href="index.html"><span data-logo style="width:38px;height:38px;display:block"></span>Dashboard</a><div class="tools"><button class="ib" data-theme-btn></button></div></div></header>
 <main class="wrap">
 <div id="setup" class="card hidden" style="margin-top:30px"><h3>Backend not connected</h3><p class="mut">Fill SUPABASE_URL and SUPABASE_ANON_KEY in config.js and run supabase/schema.sql.</p></div>
 <div id="login" class="card hidden rv" style="max-width:420px;margin:50px auto"><div data-illus="lock" style="max-width:200px;margin:0 auto 8px"></div><h3 style="text-align:center">Welcome back</h3><form id="lf" style="display:grid;gap:12px;margin-top:12px"><input id="le" type="email" placeholder="Email" required autocomplete="username"><input id="lp" type="password" placeholder="Password" required autocomplete="current-password"><button class="btn p">Sign in</button><p id="lmsg" class="mut small" role="status"></p></form></div>
-<div id="app" class="hidden lay"><nav class="side" id="tabs"></nav><div id="view"></div></div></main>
+</main><div id="app" class="hidden lay"><aside class="side" id="side"><div class="top"><span data-logo></span><span class="lbl">Raihan · Admin</span></div><nav id="tabs" style="display:flex;flex-direction:column;gap:4px"></nav><div class="grow"></div><div class="sep"></div><button class="nl" data-theme-btn2 id="thm"><i data-lucide="sun-moon"></i><span class="lbl">Theme</span></button><a class="nl" href="index.html"><i data-lucide="external-link"></i><span class="lbl">View site</span></a><button class="nl" id="logout"><i data-lucide="log-out"></i><span class="lbl">Logout</span></button></aside><div class="scrim" id="scrim"></div><div class="main"><div class="bar"><button class="ib mb" id="mb" aria-label="Open menu"><i data-lucide="menu"></i></button><button class="ib cb" id="cb" aria-label="Collapse sidebar"><i data-lucide="panel-left"></i></button><h1 id="vt">Dashboard</h1><span class="mut small" id="who"></span></div><div id="view"></div></div></div>
 <script src="config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script><script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.2/dist/html2pdf.bundle.min.js" defer></script>

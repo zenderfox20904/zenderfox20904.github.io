@@ -10,3 +10,4 @@ CLAUDE.md
 agents/
 .claude/
 data/
+.mock-*
