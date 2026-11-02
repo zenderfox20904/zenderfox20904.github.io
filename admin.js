@@ -1,4 +1,4 @@
-(()=>{if(!document.querySelector('link[href^="admin.css"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='admin.css?v=20261103';document.head.append(l)}})();
+(()=>{if(!document.querySelector('link[href^="admin.css"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='admin.css?v=20261103b';document.head.append(l)}})();
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const C=window.SITE_CONFIG||{};let sb=null;const V=()=>$('#view');
 if(!C.SUPABASE_URL||!C.SUPABASE_ANON_KEY){$('#setup').classList.remove('hidden')}else{sb=supabase.createClient(C.SUPABASE_URL,C.SUPABASE_ANON_KEY);init()}
@@ -49,7 +49,7 @@ Object.assign(REP,{
  svc:{title:'Service',fields:[['title','Service'],['text','Short description','textarea']]},
  sg:{title:'Skill group',fields:[['name','Group name'],['items','Skills','tags']]},
  edu:{title:'Education',fields:[['school','School'],['degree','Degree / program'],['period','Period']]}});
-async function getContent(){const {data}=await sb.from('site_content').select('data').eq('id','main').maybeSingle();return data?.data||await fetch('content.json').then(r=>r.json())}
+async function getContent(){const {data}=await sb.from('site_content').select('data').eq('id','main').maybeSingle();return data?.data||await fetch('content.json?v=20261103b',{cache:'no-store'}).then(r=>r.json())}
 const saveContent=async(obj,msg)=>{if(!err((await sb.from('site_content').upsert({id:'main',data:obj,updated_at:new Date().toISOString()})).error))ok(msg)};
 
 // ---------- Blog ----------

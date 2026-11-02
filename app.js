@@ -1,10 +1,11 @@
+if('serviceWorker'in navigator)navigator.serviceWorker.getRegistrations().then(r=>r.forEach(x=>x.unregister())).catch(()=>{});if(window.caches)caches.keys().then(k=>k.forEach(n=>caches.delete(n))).catch(()=>{});
 const SVI=['sparkles','layers','graduation-cap','smartphone'],STI=['calendar-clock','layout-grid','folder-kanban','code'];const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const C=window.SITE_CONFIG||{};const sb=(C.SUPABASE_URL&&C.SUPABASE_ANON_KEY&&window.supabase)?supabase.createClient(C.SUPABASE_URL,C.SUPABASE_ANON_KEY):null;
 const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 $('.burger').onclick=e=>{const l=$('.links');l.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',l.classList.contains('open'))};
 document.querySelectorAll('.links a').forEach(a=>a.onclick=()=>$('.links').classList.remove('open'));
 $('#yr').textContent=new Date().getFullYear();$('#loginBtn').innerHTML=UI.user;
-async function loadContent(){let d=await fetch('content.json').then(r=>r.json());
+async function loadContent(){let d=await fetch('content.json?v=20261103b',{cache:'no-store'}).then(r=>r.json());
  if(sb){try{const {data}=await sb.from('site_content').select('data').eq('id','main').maybeSingle();if(data&&data.data)d={...d,...data.data}}catch(e){}
   const {data:{session}}=await sb.auth.getSession();if(session){const b=$('#loginBtn');b.innerHTML=UI.dash;b.dataset.tip='Dashboard';b.setAttribute('aria-label','Dashboard')}}
  return d}
@@ -32,8 +33,8 @@ async function repos(u){try{const r=await fetch(`https://api.github.com/users/${
 }catch(e){$('#repoList').innerHTML='';$('#repoNote').innerHTML=`Couldn't reach GitHub right now. <a href="https://github.com/${u}">View profile ↗</a>`}}
 let POSTS=[];
 const fd=d=>new Date(d).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});
-async function blog(){let st=[];try{st=await (await fetch('posts.json',{cache:'no-cache'})).json()}catch(e){}
- let db=[];if(sb){try{const r=await sb.from('posts').select('*').eq('published',true);db=r.data||[]}catch(e){}}
+async function blog(){let st=[];try{st=await (await fetch('posts.json?v=20261103b',{cache:'no-store'})).json()}catch(e){}
+ let db=[];if(typeof sb!=='undefined'&&sb){try{const r=await sb.from('posts').select('*').eq('published',true);db=r.data||[]}catch(e){}}
  const m=new Map();[...st,...db].forEach(p=>m.set(p.slug,p));POSTS=[...m.values()].sort((a,b)=>new Date(b.published_at)-new Date(a.published_at));
  $('#blogList').innerHTML=POSTS.length?POSTS.map(p=>`<a class="card blogcard rv" href="#post/${esc(p.slug)}">${p.cover_url?`<img src="${esc(p.cover_url)}" alt="" loading="lazy">`:''}<h3>${esc(p.title)}</h3><p class="mut small">${fd(p.published_at)}${p.source_url?' · LinkedIn':''}</p><p class="mut">${esc(p.excerpt||'')}</p></a>`).join(''):empty('No posts yet. First one is on the way.');
  UI.reveal($('#blogList'));route()}
@@ -45,4 +46,4 @@ $('#orderForm').onsubmit=async e=>{e.preventDefault();const f=Object.fromEntries
  if(!sb){const d=window.__d;m.innerHTML=`Please <a href="mailto:${d.contact.email}?subject=${encodeURIComponent('Project request: '+f.project_type)}&body=${encodeURIComponent(Object.entries(f).map(([k,v])=>k+': '+v).join('\n'))}">send this request by email</a>.`;return}
  const b=e.target.querySelector('button');b.disabled=true;b.textContent='Sending…';
  const {error}=await sb.from('orders').insert(f);b.disabled=false;b.textContent='Send request';m.textContent=error?'Sorry, something went wrong. Please email me instead.':'Thanks! Your request was received. I will reply by email soon.';if(!error)e.target.reset()};
-loadContent().then(d=>{window.__d=d;render(d);repos(d.githubUser);blog()});
+loadContent().then(d=>{window.__d=d;render(d);repos(d.githubUser)}).catch(e=>console.error(e)).finally(()=>blog().catch(e=>console.error(e)));
