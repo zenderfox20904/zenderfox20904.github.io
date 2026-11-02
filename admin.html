@@ -58,6 +58,49 @@ body.adm{overflow-x:hidden}.adm .nav{display:none}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:grid;place-items:center;z-index:100;padding:20px;animation:vin .2s}.mbox{max-width:400px;width:100%}.dang{background:#dc2626!important}.dang:hover{background:#b91c1c!important}
 .ivh{display:flex;justify-content:space-between;gap:20px}.ivst{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:999px;border:1px solid #ccc;font-weight:600}
 #inv table{width:100%;border-collapse:collapse}#inv th,#inv td{padding:9px;border-bottom:1px solid #ddd;text-align:left}
+
+/* phone layout */
+@media(max-width:700px){
+#view{padding-bottom:84px}
+.ph .row:not(:empty){position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--bg);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;justify-content:flex-end}
+.ph .row .btn{min-height:44px;flex:1;justify-content:center}
+.tablewrap{overflow:visible!important}
+table.itab,table.itab tbody,table.itab tr,table.itab td{display:block;width:100%}
+table.itab tr:first-child{display:none}
+table.itab tr{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 10px;background:var(--card)}
+.tablewrap.card:has(.itab){border:0;background:none}
+table.itab td{border:0!important;padding:4px 0!important;display:flex;justify-content:space-between;gap:12px;text-align:right}
+table.itab td::before{color:var(--mut);font-size:12.5px;text-align:left}
+table.itab td:nth-child(1)::before{content:"Invoice"}table.itab td:nth-child(2)::before{content:"Client"}table.itab td:nth-child(3)::before{content:"Issued"}table.itab td:nth-child(4)::before{content:"Due"}table.itab td:nth-child(5)::before{content:"Amount"}table.itab td:nth-child(6)::before{content:"Status"}
+table.itab td:last-child{justify-content:flex-end;padding-top:10px!important;border-top:1px solid var(--line)!important;margin-top:6px}
+table.lines,table.lines tbody,table.lines tr.li,table.lines td{display:block;width:100%}
+table.lines tr:first-child{display:none}
+table.lines tr.li{display:grid;grid-template-columns:1fr 1fr 44px;gap:8px;border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px}
+table.lines tr.li td{padding:0!important;border:0!important}
+table.lines tr.li td:first-child{grid-column:1/-1}
+table.lines tr.li td.lt{grid-column:1/3;font-weight:700;text-align:left}
+table.lines tr.li td:nth-child(2)::before{content:"Qty";display:block;font-size:12px;color:var(--mut)}table.lines tr.li td:nth-child(3)::before{content:"Price";display:block;font-size:12px;color:var(--mut)}
+table.lines tr.li td:nth-child(5){grid-row:2;grid-column:3;align-self:end}
+table.lines input{min-height:44px;width:100%}
+.modal{padding:0;place-items:end stretch}.mbox{max-width:none;border-radius:16px 16px 0 0;padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+.f,.form,.fgrid{grid-template-columns:1fr!important}
+input,select,textarea,.btn,.ib{min-height:44px}.ib.sm{min-width:40px;min-height:40px}
+#inv{padding:18px!important;overflow:hidden}#inv table{font-size:12.5px}#inv th,#inv td{padding:8px 4px!important}#inv .ivh{flex-direction:column;gap:14px}#inv .ivh>div:last-child{text-align:left!important}#inv h1{font-size:26px}#inv h2{font-size:20px}.kpis{grid-template-columns:1fr 1fr!important}.kpis b,.kpis strong{font-size:20px!important}.ph .row:not(:empty){flex-wrap:wrap}
+}
+@media(min-width:701px) and (max-width:1024px){.kpis{grid-template-columns:repeat(2,1fr)!important}.ed{grid-template-columns:1fr}}
+
+.pgrid{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}.pprev{position:sticky;top:16px}
+.psec{margin-bottom:16px}.psh{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}.psh h3{margin:0}.psh .dirty{margin-left:auto;color:#b45309;display:flex;gap:4px;align-items:center;white-space:nowrap}.psh .dirty.hidden{display:none}
+.pact{display:flex;justify-content:flex-end;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.phrow{display:flex;gap:16px;align-items:center}.pav{width:84px;height:84px;border-radius:50%;overflow:hidden;border:1px solid var(--line);flex:none}.pav img{width:100%;height:100%;object-fit:cover}
+.srow{display:grid;grid-template-columns:140px 1fr 40px;gap:8px;margin-bottom:8px;align-items:center}
+.inv{border-color:#dc2626!important;outline:2px solid #fecaca}
+.hpc{text-align:center}.hpc img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}.hpc h3{margin:10px 0 2px}.hpc .hl{color:#0284c7;font-weight:600;margin:0 0 4px}
+.hps{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:8px;margin-top:14px}.hps div{border:1px solid var(--line);border-radius:10px;padding:8px}.hps b{display:block;font-size:20px}.hps span{font-size:11.5px;color:var(--mut)}
+.am{position:relative}.avb{width:36px;height:36px;border-radius:50%;background:#0284c7;color:#fff;border:0;font-weight:700;cursor:pointer}.amenu{position:absolute;right:0;top:44px;min-width:220px;padding:8px;z-index:80;display:grid;gap:2px}.amenu.hidden{display:none}.amenu p{padding:6px 10px;margin:0}.amenu button{display:flex;gap:10px;align-items:center;padding:10px;border:0;background:none;color:var(--txt);border-radius:8px;cursor:pointer;text-align:left;font:inherit}.amenu button:hover{background:var(--chip)}
+.crop{max-width:380px}.cwrap{display:grid;place-items:center;margin:10px 0}.cwrap canvas{width:100%;max-width:320px;aspect-ratio:1;border-radius:50%;touch-action:none;cursor:grab;border:1px solid var(--line)}
+@media(max-width:1000px){.pgrid{grid-template-columns:1fr}.pprev{position:static;order:-1}}
+@media(max-width:700px){.srow{grid-template-columns:1fr 40px}.srow select{grid-column:1/-1}.pact{position:sticky;bottom:0;background:var(--card);margin:14px -16px -16px;padding:12px 16px;border-radius:0 0 14px 14px}.pact .btn{flex:1;justify-content:center}#who{display:block!important}#who>.am .avb{width:40px;height:40px}}
 </style></head><body class="adm">
 <header class="nav"><div class="wrap"><a class="brand" href="index.html"><span data-logo style="width:38px;height:38px;display:block"></span>Dashboard</a><div class="tools"><button class="ib" data-theme-btn></button></div></div></header>
 <main class="wrap">

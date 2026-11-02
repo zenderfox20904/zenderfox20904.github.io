@@ -130,3 +130,9 @@ a:hover .lg,.lg:hover{transform:translateY(-1px)}a:hover .lg .mk,.lg:hover .mk{t
 [data-theme=dark] .nflogo .lg .bgt{fill:#ffffff}[data-theme=dark] .nflogo .lg .mk{stroke:#151515}
 @media(max-width:900px){.nfrow{grid-template-columns:1fr 1fr}.nfbrand{grid-column:1/-1}}
 @media(max-width:520px){.nfbar{flex-direction:column;align-items:flex-start}.nfw{padding-top:48px}}
+/* responsive polish */
+html,body{overflow-x:clip}
+@media(max-width:600px){#brandName{font-size:15px;line-height:1.15}.rel a{padding:12px 14px!important;font-size:13px}.brand{min-height:44px}.nfcol a{padding:10px 0}.nfcol{gap:2px}.nfsoc a{padding:13px}.nfsoc{gap:4px;margin-left:-13px}.nflogo{min-height:44px}#projList a,.card .btns a{min-height:44px;display:inline-flex;align-items:center}}
+@media(max-width:360px){#brandName{display:none}}
+
+.stats{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));max-width:460px;margin-inline:auto;gap:16px}.stat{text-align:center;padding:14px 10px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
